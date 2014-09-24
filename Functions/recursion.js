@@ -14,6 +14,10 @@ The function should accept a number parameter and return a Boolean.
 Test it on 50 and 75. See how it behaves on -1. Why? Can you think of a 
 way to fix this? */
 
+/*
+
+Answer:
+
 function isEven (n) {
 	if (n===0) {
 		return true;
@@ -26,10 +30,15 @@ function isEven (n) {
 	}
 }
 console.log(isEven(75));
+*/
 
-//Fixing behavior on -1
+//Fixing behavior on -1:
 
 function isEven (n) {
+	if (n<0) {
+		n = Math.abs(n);
+		return isEven(n);
+	}
 	if (n===0) {
 		return true;
 	}
@@ -40,4 +49,4 @@ function isEven (n) {
 		return isEven(n-2);
 	}
 }
-console.log(isEven(-1));
+console.log(isEven(-2));
